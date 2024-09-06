@@ -1,0 +1,31 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "Calculator app using html, css, js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiogoNet0/calculator.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "calculator",
+    "learning"
+  ],
+  "author": "Diogo Neto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DiogoNet0/calculator/issues"
+  },
+  "homepage": "https://github.com/DiogoNet0/calculator#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.9.1",
+    "eslint": "^9.9.1",
+    "globals": "^15.9.0"
+  }
+}
