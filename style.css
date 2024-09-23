@@ -1,0 +1,35 @@
+/* html { */
+/*   width: 100%; */
+/*   height: 100%; */
+/* } */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  border: 2px blue solid;
+  padding: 2rem 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+
+.result {
+  border: 2px solid red;
+  height: 35vh;
+  width: 20vh;
+}
+
+.keys {
+  background-color: blue;
+  height: 65%;
+  width: 100%;
+}
+
+footer {
+  padding: 2rem 0 1rem 0;
+}
