@@ -70,19 +70,39 @@ main {
 }
 
 .calculator {
-  /* your calculator styles here */
+  border: solid green 2px;
+  height: 75vh;
+  width: 20vw;
 }
 
-.calculator__result {
+.calculator__display {
   border: 2px solid red;
-  height: 35vh;
-  width: 20vh;
+  height: 25%;
 }
 
-.calculator__keys {
+.calculator__buttons {
   background-color: blue;
-  height: 65%;
-  width: 100%;
+  height: 75%;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.btn--primary {
+  width: 25%;
+  max-width: 100px;
+  aspect-ratio: 1/1;
+}
+
+.btn--secondary {
+  width: 25%;
+  max-width: 100px;
+  aspect-ratio: 1/2;
+}
+
+.btn--horizontal {
+  width: 50%;
+  max-width: 200px;
+  aspect-ratio: 2/1;
 }
 
 footer {
