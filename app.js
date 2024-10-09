@@ -8,7 +8,7 @@ const btnSix = document.getElementById("btn__key--six");
 const btnSeven = document.getElementById("btn__key--seven");
 const btnEight = document.getElementById("btn__key--eight");
 const btnNine = document.getElementById("btn__key--nine");
-const displayResult = getElementById("display--result");
+const displayResult = document.getElementById("display--result");
 
 let result = 99;
 
