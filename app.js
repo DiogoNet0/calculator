@@ -28,5 +28,3 @@ btnNine.addEventListener('click', helloWorld);
 btnAdd.addEventListener('click', helloWorld);
 
 displayResult.textContent = result;
-
-const name = 'teste';
