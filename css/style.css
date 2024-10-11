@@ -1,0 +1,144 @@
+/* Box model reset */
+:root {
+  --primary-color: #fcf5e5;
+  --secondary-color: #b8f3d7;
+  --text-color: #2f302b;
+  --shadow-color: rgba(45, 52, 44, 0.3);
+  --footer-color: #8abba8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-color);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-image: url(../img/background.png);
+  background-size: cover;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.calculator {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 2 / 4;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--secondary-color);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+.calculator__display {
+  flex: 0 0 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 20px;
+  background-color: var(--primary-color);
+}
+
+.result {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.calculation {
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
+
+.calculator__buttons {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px;
+  gap: 10px;
+  justify-content: space-between; /* Ensure even spacing between buttons */
+}
+
+.btn {
+  flex: 1 0 calc(23% - 10px); /* Adjust the width of buttons */
+  aspect-ratio: 1 / 1;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px var(--shadow-color);
+}
+
+.btn--horizontal {
+  flex: 2 0 calc(48% - 10px); /* Adjust width for the "0" button to span two columns */
+  aspect-ratio: 2/1;
+}
+
+.btn:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  /* background-color: var(--footer-color); */
+}
+
+.fa-github {
+  color: var(--text-color);
+  font-size: 24px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+  transform: rotate(360deg) scale(1.2);
+}
+
+@media (max-width: 600px) {
+  .calculator {
+    width: 95%;
+  }
+
+  .btn {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .calculator {
+    max-width: 500px;
+  }
+}

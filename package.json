@@ -1,31 +1,28 @@
 {
   "name": "calculator",
   "version": "1.0.0",
-  "description": "Calculator app using html, css, js",
+  "prettier": "prettier-airbnb-config",
+  "description": "This is an on-screen calculator from The Odin Project [curriculum](https://www.theodinproject.com/lessons/calculator) using **JavaScript**, **HTML** and **CSS**.",
   "main": "app.js",
+  "devDependencies": {
+    "eslint": "^7.26.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.2",
+    "prettier": "3.3.3",
+    "prettier-airbnb-config": "^1.0.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DiogoNet0/calculator.git"
   },
-  "keywords": [
-    "html",
-    "css",
-    "javascript",
-    "calculator",
-    "learning"
-  ],
   "author": "Diogo Neto",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/DiogoNet0/calculator/issues"
   },
-  "homepage": "https://github.com/DiogoNet0/calculator#readme",
-  "devDependencies": {
-    "@eslint/js": "^9.9.1",
-    "eslint": "^9.9.1",
-    "globals": "^15.9.0"
-  }
+  "homepage": "https://github.com/DiogoNet0/calculator#readme"
 }

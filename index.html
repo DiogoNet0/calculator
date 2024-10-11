@@ -3,9 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title></title>
-    <link href="style.css" rel="stylesheet" />
-    <script src="app.js" defer></script>
+    <title>Calculator</title>
+    <link href="css/normalize.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/536194afa6.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <main>
@@ -36,10 +40,19 @@
           <button class="btn" id="btn__key--result">=</button>
         </div>
       </section>
-
-      <footer>
-        <h2>Crafted by Diogo Neto</h2>
-      </footer>
     </main>
+    <footer class="footer">
+      <p>
+        Copyright ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        Diogo Neto
+      </p>
+      <a href="https://github.com/diogonet0" target="_blank">
+        <i class="fa-brands fa-github"></i>
+      </a>
+    </footer>
+    <script src="app.js"></script>
   </body>
 </html>
