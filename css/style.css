@@ -44,9 +44,9 @@ main {
   display: flex;
   flex-direction: column;
   background-color: var(--secondary-color);
-  border-radius: 15px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 10px 20px var(--shadow-color);
+  box-shadow: 12px 10px 2px 0px black;
 }
 
 .calculator__display {
@@ -60,12 +60,12 @@ main {
 }
 
 .result {
-  font-size: 2rem;
+  font-size: 4rem;
   font-weight: bold;
 }
 
 .calculation {
-  font-size: 1.2rem;
+  font-size: 2rem;
   opacity: 0.7;
 }
 
@@ -75,14 +75,14 @@ main {
   flex-wrap: wrap;
   padding: 15px;
   gap: 10px;
-  justify-content: space-between; /* Ensure even spacing between buttons */
+  justify-content: space-between;
 }
 
 .btn {
-  flex: 1 0 calc(23% - 10px); /* Adjust the width of buttons */
+  flex: 1 0 calc(23% - 10px);
   aspect-ratio: 1 / 1;
   background-color: var(--primary-color);
-  border: none;
+  border: 3px solid black;
   border-radius: 10px;
   font-size: 1.2rem;
   display: flex;
@@ -90,11 +90,11 @@ main {
   align-items: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 3px 6px var(--shadow-color);
+  box-shadow: 4px 5px 2px 0px black;
 }
 
 .btn--horizontal {
-  flex: 2 0 calc(48% - 10px); /* Adjust width for the "0" button to span two columns */
+  flex: 2 0 calc(48% - 10px);
   aspect-ratio: 2/1;
 }
 
@@ -114,7 +114,7 @@ main {
   gap: 10px;
   width: 100%;
   padding: 10px;
-  /* background-color: var(--footer-color); */
+  background-color: var(--footer-color);
 }
 
 .fa-github {
