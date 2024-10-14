@@ -28,9 +28,3 @@ btnNine.addEventListener('click', helloWorld);
 btnAdd.addEventListener('click', helloWorld);
 
 displayResult.textContent = result;
-
-const someFunction = () => {
-  console.log('this is a message');
-};
-
-someFunction();
