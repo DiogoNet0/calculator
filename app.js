@@ -1,61 +1,67 @@
-const btnZero = document.getElementById('btn__key--zero')
-const btnOne = document.getElementById('btn__key--one')
-const btnTwo = document.getElementById('btn__key--two')
-const btnThree = document.getElementById('btn__key--three')
-const btnFour = document.getElementById('btn__key--four')
-const btnFive = document.getElementById('btn__key--five')
-const btnSix = document.getElementById('btn__key--six')
-const btnSeven = document.getElementById('btn__key--seven')
-const btnEight = document.getElementById('btn__key--eight')
-const btnNine = document.getElementById('btn__key--nine')
-const btnSub = document.getElementById('btn__key--subtraction')
-const btnMul = document.getElementById('btn__key--multiplication')
-const btnAdd = document.getElementById('btn__key--addiction')
-const btnDiv = document.getElementById('btn__key--division')
-const btnLog = document.getElementById('btn__key--log')
-const btnPercent = document.getElementById('btn__key--percentage')
-const btnAC = document.getElementById('btn__key--ac')
-const btnDec = document.getElementById('btn__key--decimal')
-const btnResult = document.getElementById('btn__key--result')
+// Variables
+const calcBtns = document.getElementById('calculator__buttons')
 const displayResult = document.getElementById('display--result')
+const displayCalc = document.getElementById('display--calculation')
 
-let firstOperand = ''
-let secondOperand = ''
-let currentOperation = null
-let result = 99
+let firstOp = ''
+let secondOp = ''
+let operator = ''
+let opResult = ''
 
-function helloWorld() {
-  console.log('Hello world')
+// Numbers and operator handlers
+
+function handleNumber(number) {
+  if (operator === '') {
+    firstOp += number
+  } else {
+    secondOp += number
+  }
 }
 
-// Operations
-// Addiction
-function add(a, b) {
-  return a + b
+function handleOperation(operation) {
+  operator = ''
+  operator += operation
+  console.log(operator)
 }
 
-// Substration
-function sub(a, b) {
-  return a - b
+// switch (operator) {
+//   case '+':
+//     console.log(firstOp + secondOp)
+//     break
+//   case '-':
+//     console.log(firstOp - secondOp)
+//     break
+//   case '/':
+//     console.log(firstOp / secondOp)
+//     break
+//   case '*':
+//     console.log(firstOp * secondOp)
+//     break
+//
+//   default:
+//     console.log('error')
+//     break
+// }
+
+// Update display
+
+function updateDisplay() {
+  if (secondOp === '') {
+    displayCalc.textContent = firstOp
+  } else {
+    displayCalc.textContent = secondOp
+  }
 }
 
-// Multiplication
-function mul(a, b) {
-  return a * b
-}
-
-// Division
-function div(a, b) {
-  return a / b
-}
-
-// Percentage
-function per(a, b) {
-  return (a * b) / 100
-}
-
-console.log(per(10, 2))
-// Log
-function log(a) {
-  return Math.log(a)
-}
+// Event listeners
+calcBtns.addEventListener('click', (event) => {
+  if (event.target.classList.contains('btn')) {
+    const value = event.target.getAttribute('data-value')
+    if (!isNaN(value)) {
+      handleNumber(value)
+    } else {
+      handleOperation(value)
+    }
+    updateDisplay()
+  }
+})
