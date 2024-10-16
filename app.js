@@ -8,8 +8,12 @@ let secondOp = ''
 let operator = ''
 let opResult = ''
 
-// Numbers and operator handlers
+// Functions for the mathematical operations
+function add(a, b) {
+  return a + b
+}
 
+// Handle numbers and operations
 function handleNumber(number) {
   if (operator === '') {
     firstOp += number
@@ -19,32 +23,15 @@ function handleNumber(number) {
 }
 
 function handleOperation(operation) {
-  operator = ''
-  operator += operation
-  console.log(operator)
+  if (operation === 'equals') {
+    operate()
+  } else {
+    operator = ''
+    operator += operation
+  }
 }
 
-// switch (operator) {
-//   case '+':
-//     console.log(firstOp + secondOp)
-//     break
-//   case '-':
-//     console.log(firstOp - secondOp)
-//     break
-//   case '/':
-//     console.log(firstOp / secondOp)
-//     break
-//   case '*':
-//     console.log(firstOp * secondOp)
-//     break
-//
-//   default:
-//     console.log('error')
-//     break
-// }
-
 // Update display
-
 function updateDisplay() {
   if (secondOp === '') {
     displayCalc.textContent = firstOp
@@ -65,3 +52,17 @@ calcBtns.addEventListener('click', (event) => {
     updateDisplay()
   }
 })
+
+// Decides what operation to execute
+function operate() {
+  if (firstOp !== '' && operator !== '' && secondOp !== '') {
+    switch (operator) {
+      case 'addiction':
+        opResult = add(firstOp, secondOp)
+        console.log(opResult)
+        break
+      default:
+        console.log('Error')
+    }
+  }
+}
