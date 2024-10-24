@@ -2,18 +2,34 @@
 const calcBtns = document.getElementById('calculator__buttons')
 const displayResult = document.getElementById('display--result')
 const displayCalc = document.getElementById('display--calculation')
-
 let firstOp = ''
 let secondOp = ''
 let operator = ''
+let equal = false
 let opResult = ''
 
-// Functions for the mathematical operations
 function add(a, b) {
-  return a + b
+  return Number(a) + Number(b)
 }
 
-// Handle numbers and operations
+function operate() {
+  if (firstOp !== '' && operator !== '' && secondOp !== '') {
+    switch (operator) {
+      case 'addition':
+        opResult = add(firstOp, secondOp)
+        displayResult.textContent = opResult
+        // After calculation, set firstOp to the result for chaining operations
+        firstOp = opResult.toString()
+        secondOp = ''
+        operator = ''
+        console.log(opResult)
+        break
+      default:
+        console.log('Error')
+    }
+  }
+}
+
 function handleNumber(number) {
   if (operator === '') {
     firstOp += number
@@ -24,14 +40,16 @@ function handleNumber(number) {
 
 function handleOperation(operation) {
   if (operation === 'equals') {
+    equal = true
+    console.log(equal)
     operate()
   } else {
     operator = ''
     operator += operation
+    console.log(operator)
   }
 }
 
-// Update display
 function updateDisplay() {
   if (secondOp === '') {
     displayCalc.textContent = firstOp
@@ -40,7 +58,6 @@ function updateDisplay() {
   }
 }
 
-// Event listeners
 calcBtns.addEventListener('click', (event) => {
   if (event.target.classList.contains('btn')) {
     const value = event.target.getAttribute('data-value')
@@ -52,17 +69,3 @@ calcBtns.addEventListener('click', (event) => {
     updateDisplay()
   }
 })
-
-// Decides what operation to execute
-function operate() {
-  if (firstOp !== '' && operator !== '' && secondOp !== '') {
-    switch (operator) {
-      case 'addiction':
-        opResult = add(firstOp, secondOp)
-        console.log(opResult)
-        break
-      default:
-        console.log('Error')
-    }
-  }
-}
