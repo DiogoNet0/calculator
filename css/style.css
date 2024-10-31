@@ -74,33 +74,45 @@ main {
 }
 
 .calculator__buttons {
-  flex: 1;
-  display: flex;
-  flex-wrap: wrap;
+  height: 75%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas:
+    'ac division multiplication minus'
+    'seven eight nine plus'
+    'four five six plus'
+    'one two three equal'
+    'zero zero dot equal';
   padding: 15px;
   gap: 2%;
-  justify-content: space-between;
 }
 
 .btn {
-  flex: 1 0 20%;
-  aspect-ratio: 1 / 1;
   background-color: var(--primary-color);
   border: 3px solid black;
   border-radius: 10px;
   font-size: 1.4rem;
   font-weight: 700;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 4px 5px 2px 0px black;
 }
 
-.btn--horizontal {
-  flex: 2 0 calc(48% - 10px);
-  aspect-ratio: 2/1;
+#btn__key--zero {
+  grid-area: zero;
+}
+
+#btn__key--addition {
+  grid-area: plus;
+}
+
+#btn__key--decimal {
+  grid-area: dot;
+}
+
+#btn__key--result {
+  grid-area: equal;
 }
 
 .btn:hover {
