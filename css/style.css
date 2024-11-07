@@ -39,7 +39,7 @@ main {
 
 .calculator {
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   aspect-ratio: 2 / 4;
   display: flex;
   flex-direction: column;
@@ -74,7 +74,7 @@ main {
 }
 
 .calculator__buttons {
-  height: 75%;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
@@ -154,8 +154,8 @@ main {
   }
 }
 
-@media (min-width: 1200px) {
-  .calculator {
-    max-width: 500px;
-  }
+/* @media (min-width: 1200px) { */
+/*   .calculator { */
+/*     max-width: 500px; */
+/*   } */
 }
